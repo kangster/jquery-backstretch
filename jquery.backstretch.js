@@ -36,9 +36,9 @@
                 var container = $("<div />").attr("id", settings.elementId)
                                             .css({left: 0, top: 0, position: "fixed", overflow: "hidden", zIndex: -9999}),
                     img = $("<img />").css({position: "relative", display: "none"})
-                                      .bind("load", function(e) {                                          
+                                      .bind("load", function() {
                                           var self = $(this);
-                                          imgRatio = $(e.target).width() / $(e.target).height();
+                                          imgRatio = this.width / this.height;
     
                                           _adjustBG(function() {
                                               self.fadeIn(settings.speed, function(){
